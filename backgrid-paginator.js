@@ -408,7 +408,7 @@
           if (key == "rewind" || key == "back") handles.unshift(handle);
           else handles.push(handle);
         }
-      }, this);
+      }.bind(this));
 
       return handles;
     },
@@ -445,5 +445,10 @@
     }
 
   });
+
+  return {
+    PageHandle: PageHandle,
+    Paginator: Paginator
+  };
 
 }));
